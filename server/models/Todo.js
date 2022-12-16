@@ -1,8 +1,8 @@
-const { Schema, model } = require('mongoose')
+const {Schema, model} = require('mongoose')
 
 const TodoSchema = new Schema({
     title: {
-        type: String,
+        type: String, 
         required: true,
     },
     description: {

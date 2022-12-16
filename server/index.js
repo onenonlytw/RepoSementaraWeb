@@ -1,21 +1,31 @@
-const mongoose = require('mongoose')
+
+const express = require('express')
+const app = express()
 const { PORT, mongoUri } = require('./node_modules/config')
 const cors = require('cors')
-const express = require('express')
 const bodyParser = require('body-parser')
-const app = express()
+const TodoListRoutes = require('./routes/api/Todolist')
+const path = require('path')
+const { default: mongoose } = require('mongoose')
 require('dotenv').config();
 
-app.use(cors()) // to allow cross origin requests
-app.use(bodyParser.json()) // to convert the request into JSON
+app.use(cors())
+app.use(bodyParser.json())
 
 mongoose
     .connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
-
+        useUnifiedTopology: true,        
     })
     .then(() => console.log('MongoDB database Connected...'))
     .catch((err) => console.log(err))
 
-app.listen(process.env.PORT, () => console.log(`App listening at http://localhost:${process.env.PORT}`))
+app.get('/', (req, res) => {
+    res.send('Hello World Tugas Web')
+})
+
+app.use('/api/todoList', TodoListRoutes)
+
+app.listen(process.env.PORT, () => {
+    console.log(`App is listening at http://localhost:${process.env.PORT}`)
+})
