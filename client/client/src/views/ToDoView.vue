@@ -28,8 +28,8 @@
                 <ul>
                   <li v-for="(todo, i) in todos" :key="todo._id">
                     <div class="todo">
-                    <span class="todo-name">{{ todo.title }}</span>
-                    <span class="todo-description">{{ todo.description }}</span>
+                    <span class="todo-name text-white">{{ todo.title }}</span>
+                    <span class="todo-description text-white">{{ todo.description }}</span>
                   </div>
                     <button class="delete-btn" @click="removeTodo(todo, i)">Delete ToDo</button>
                   </li>
@@ -151,5 +151,6 @@ export default {
   padding: 10px;
   cursor: pointer;
   border: none;
+  border-radius: 5px;
 }
 </style>
