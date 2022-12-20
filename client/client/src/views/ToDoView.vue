@@ -8,9 +8,9 @@
                 </svg>
         </div>
         <div class="flex items-center gap-10">
-            <a class="text-white font-medium" href="http://localhost:8080/home">Home</a>
-            <a class="text-white font-medium" href="http://localhost:8080/home">About Us</a>
-            <a class="text-white font-medium" href="http://localhost:8080/home">Contact</a>
+            <a class="text-white font-medium" href="http://localhost:8080/">Home</a>
+            <a class="text-white font-medium" href="http://localhost:8080/">About Us</a>
+            <a class="text-white font-medium" href="http://localhost:8080/">Contact</a>
         </div>
       </nav>
       <div class="ToDo">
